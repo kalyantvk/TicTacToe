@@ -1,18 +1,50 @@
 h1 {
-    text-align: center;
+  text-align: center;
+}
+td {
+  width: 100px;
+  height: 100px;
+  -webkit-box-shadow: 0 0 20px rgb(31, 255, 11);
+  -moz-box-shadow: 0 0 20px rgb(31, 255, 11);
+  box-shadow: 0 0 20px rgb(31, 255, 11);
+}
+table {
+  margin: 5px auto;
+}
+.vert {
+  border-left: 2px solid rgb(31, 255, 11);
+  border-right: 2px solid rgb(31, 255, 11);
+}
+.hori {
+  border-top: 2px solid rgb(31, 255, 11);
+  border-bottom: 2px solid rgb(31, 255, 11);
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(177, 64, 200, 1) 0%,
+    rgb(255, 1, 1) 35%,
+    rgba(45, 1, 62, 1) 100%
+  );
+  width: 50%;
+  margin: auto;
+}
+.glow {
+  font-size: 70px;
+  color: #ffffff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000,
+      0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
   }
-  td {
-    width: 100px;
-    height: 100px;
+  to {
+    text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
-  table {
-    margin: 5px auto;
-  }
-  .vert {
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-  }
-  .hori {
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-  }
+}

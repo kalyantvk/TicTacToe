@@ -1,18 +1,180 @@
-<h1>Tic Tac Toe</h1>
-<table>
-  <tr>
-    <td></td>
-    <td class="vert"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="hori"></td>
-    <td class="vert hori"></td>
-    <td class="hori"></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td class="vert"></td>
-    <td></td>
-  </tr>
-</table>
+<div class="d-flex flex-column min-v h-100">
+  <h1
+    style="
+      font-family: 'Fredoka One', cursive;
+      background: -webkit-linear-gradient(rgb(23, 137, 234), rgb(162, 214, 57));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    "
+  >
+    Tic Tac Toe
+  </h1>
+  <hr class="w-100" />
+
+  <div>
+    <div
+      class="mt-2"
+      style="color: red; display: flex; justify-content: center"
+    >
+      <h2 [style.visibility]="gameOver ? 'visible' : 'hidden'">
+        {{ message }}
+      </h2>
+    </div>
+    <div class="mt-3 d-flex justify-content-center" style="">
+      <svg
+        *ngIf="gameOver"
+        _ngcontent-akw-c11=""
+        height="300"
+        width="300"
+        style="position: absolute; margin: 5px auto"
+      >
+        <line
+          _ngcontent-akw-c11=""
+          [attr.x1]="x1"
+          [attr.y1]="y1"
+          [attr.x2]="x2"
+          [attr.y2]="y2"
+          style="stroke: rgb(255, 0, 0); stroke-width: 2"
+        ></line>
+      </svg>
+
+      <!-- <svg
+        _ngcontent-akw-c11=""
+        height="300"
+        width="300"
+        style="position: absolute; margin: 5px auto"
+      >
+        <line
+          _ngcontent-akw-c11=""
+          x1="50"
+          y1="0"
+          x2="50"
+          y2="300"
+          style="stroke: rgb(255, 0, 0); stroke-width: 2"
+        ></line>
+      </svg> -->
+      <table style="background-color: black">
+        <tr>
+          <td
+            (click)="fillBoard(0, 0)"
+            id="00"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+            class="glow"
+          ></td>
+          <td
+            (click)="fillBoard(0, 1)"
+            id="01"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+            class="vert glow"
+          ></td>
+          <td
+            (click)="fillBoard(0, 2)"
+            id="02"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+            class="glow"
+          ></td>
+        </tr>
+        <tr>
+          <td
+            (click)="fillBoard(1, 0)"
+            id="10"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+            class="hori"
+          ></td>
+          <td
+            (click)="fillBoard(1, 1)"
+            id="11"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+            class="vert hori"
+          ></td>
+          <td
+            (click)="fillBoard(1, 2)"
+            id="12"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+            class="hori"
+          ></td>
+        </tr>
+        <tr>
+          <td
+            (click)="fillBoard(2, 0)"
+            id="20"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+          ></td>
+          <td
+            (click)="fillBoard(2, 1)"
+            id="21"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+            class="vert"
+          ></td>
+          <td
+            (click)="fillBoard(2, 2)"
+            id="22"
+            style="
+              text-align: center;
+              font-size: 60px;
+              color: rgba(255, 255, 255, 0.89);
+              font-family: 'Fredoka One', cursive;
+            "
+          ></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <footer
+    class="d-flex justify-content-center"
+    style="
+      bottom: 0;
+      position: absolute;
+      /* display: flex; */
+      /* align-items: center; */
+      /* align-content: center; */
+      /* margin: auto; */
+      /* justify-content: center; */
+      width: 100%;
+    "
+  >
+    <p class="love">Made with&nbsp;</p>
+    <p style="color: red">❤</p>
+    <p>&nbsp;by PavanKalyan.c</p>
+  </footer>
+</div>
