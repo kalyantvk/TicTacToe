@@ -27,27 +27,37 @@ export class AppComponent {
   message: string = 'Draw!';
 
   fillBoard(x, y) {
-    console.log('hi');
-
     this.count++;
-    if (
-      document.getElementById(x + '' + y).textContent == '' &&
-      !this.gameOver
-    ) {
-      document.getElementById(x + '' + y).textContent = this.value;
+    if (this.board[x][y] == '' && !this.gameOver) {
+      //document.getElementById(x + '' + y).textContent = this.value;
       this.board[x][y] = this.value;
       this.value = this.value == 'X' ? 'O' : 'X';
-      console.log(x + '-' + y);
-      if (this.checkGameOver()) {
-        console.log('fuck offfffffffffff');
 
+      if (this.checkGameOver()) {
         this.gameOver = true;
         this.message = 'Game Over!';
+        document.getElementById('overlay').style.display = 'flex';
+        document.getElementById('text').style.display = 'flex';
       }
       if (this.count == 9 && !this.gameOver) {
         this.gameOver = true;
+        document.getElementById('overlay').style.display = 'flex';
+        document.getElementById('text').style.display = 'flex';
       }
     }
+  }
+
+  resetGame() {
+    this.gameOver = false;
+    this.board = [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', ''],
+    ];
+    this.value = 'X';
+
+    this.count = 0;
+    document.getElementById('overlay').style.display = 'none';
   }
 
   checkGameOver() {
