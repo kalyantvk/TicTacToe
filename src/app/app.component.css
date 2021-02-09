@@ -71,8 +71,9 @@ body {
   -ms-transform: translate(-50%, -50%);
 }
 
-@media screen and (min-width: 500px) and (max-width: 640px) {
+@media screen and (min-height: 0px) and (max-height: 500px) {
   .myfoot {
     position: relative !important;
+    margin-top: 20px;
   }
 }
